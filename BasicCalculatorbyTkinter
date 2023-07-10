@@ -1,0 +1,17 @@
+from tkinter import *
+def click():
+    value=eval(val.get())
+    val.set(value)
+    s = Label(w,text="Succsessfully\nCalculated",font="Lucia 20 bold",fg="Green").pack(side=LEFT,fill=X,ipadx=18,pady=10,padx=10)
+def click2():
+    val.set("")
+    s2 = Label(w,text="Reset\nSuccsessfully",font="Lucia 20 bold",fg="Green").pack(side=LEFT,fill=X,ipadx=18,pady=10,padx=10)
+w = Tk()
+w.geometry("800x450")
+w.title("Calculator")
+val = StringVar()
+screen = Entry(w,textvariable=val ,font="Lucia 60 bold",bg="Light Blue").pack(fill=X,ipadx=8,pady=10,padx=10)
+n = Button(w,text="Calculate",command=click, font="Lucia 35 bold",bg="Light Pink" ).pack(fill=X,ipadx=8,pady=10,padx=10)
+rs = Button(w,text="Reset",command=click2, font="Lucia 35 bold",bg="Light Pink" ).pack(fill=X,side=RIGHT,ipadx=80,pady=10,padx=10)
+s3 = Label(w,text="Created by Prince Chauhan",font="Lucia 10 bold",fg="Green").pack(side=BOTTOM,pady=10,padx=10)
+w.mainloop()
