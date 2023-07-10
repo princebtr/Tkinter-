@@ -1,0 +1,79 @@
+from tkinter import *
+import random
+a = [1,2,3]
+def click1():
+    j = val2.get()
+    k = val3.get()
+    com = 0
+    you = 0
+    r = random.choice(a)
+    if (r == 1):
+        val.set("Its a DRAW")
+        val4.set("ROCK")
+    elif (r == 2):
+        val.set("YOU LOOSE")
+        val4.set("PAPER")
+        com += 1
+    elif (r == 3):
+        val.set("YOU WIN")
+        val4.set("SCISSOR")
+        you +=1
+    val2.set(j+you)
+    val3.set(k+com)
+def click2():
+    j = val2.get()
+    k = val3.get()
+    com = 0
+    you = 0
+    r = random.choice(a)
+    if (r == 2):
+        val.set("Its a DRAW")
+        val4.set("PAPER")
+    elif (r == 3):
+        val.set("YOU LOOSE")
+        val4.set("SCISSOR")
+        com += 1
+    elif (r == 1):
+        val.set("YOU WIN")
+        val4.set("ROCK")
+        you += 1
+    val2.set(j+you)
+    val3.set(k+com)
+def click3():
+    j = val2.get()
+    k = val3.get()
+    com = 0
+    you = 0
+    r = random.choice(a)
+    if (r == 3):
+        val.set("Its a DRAW")
+        val4.set("SCISSOR")
+    elif (r == 1):
+        val.set("YOU LOOSE")
+        val4.set("ROCK")
+        com += 1
+    elif (r == 2):
+        val.set("YOU WIN")
+        val4.set("PAPER")
+        you += 1
+    val2.set(j+you)
+    val3.set(k+com)
+w = Tk()
+w.minsize(920,500)
+w.title("Rock Paper Scissor")
+val = StringVar()
+val2 = IntVar()
+val3 = IntVar()
+val4 = StringVar()
+scr = Entry(w,textvariable=val,font="Lucia 50 bold",fg="Gray", borderwidth=3, relief="raised").grid(column=1,columnspan=5)
+lab2 = Label(w,text="COMPUTER CHOICE :",font="Lucia 20 bold", fg="Red").grid(row = 1 ,column = 1,padx=6,pady=15)
+scr = Entry(w,textvariable=val4,font="Lucia 20 bold").grid(row = 1 ,column = 2,columnspan=4,padx=6,pady=15)
+n1 = Button(w,text="ROCK",command=click1,font="Lucia 35 bold",fg="Gray",bg="pink", borderwidth=3, relief="raised").grid(row=2,column=1,padx=6,pady=15)
+n2 = Button(w,text="PAPER",command=click2,font="Lucia 35 bold",fg="Gray",bg="pink", borderwidth=3, relief="raised").grid(row=2,column=2,padx=6,pady=15)
+n3 = Button(w,text="SCISSOR",command=click3,font="Lucia 35 bold",fg="Gray",bg="pink", borderwidth=3, relief="raised").grid(row=2,column=3,padx=6,pady=15)
+lab2 = Label(w,text="YOU",font="Lucia 20 bold", fg="Green").grid(row = 3 ,column = 1,padx=6,pady=15)
+scr = Entry(w,textvariable=val2,font="Lucia 20 bold", borderwidth=3, relief="raised").grid(row = 4 , column = 1,padx=16,pady=15)
+lab2 = Label(w,text="SCORES",font="Lucia 20 bold", fg="Gray").grid(row = 3 ,column = 2,padx=6,pady=15)
+lab2 = Label(w,text="COMPUTER",font="Lucia 20 bold", fg="Red").grid(row = 3 ,column = 3,padx=6,pady=15)
+scr = Entry(w,textvariable=val3,font="Lucia 20 bold", borderwidth=3, relief="raised").grid(row = 4 ,column = 3,padx=16,pady=15)
+w.mainloop()
